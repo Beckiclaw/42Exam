@@ -20,4 +20,17 @@ char	*ft_strdup(char *src)
 	dup[i] = '\0';
 	return(dup);
 }
-	
+
+int	main(void)
+{
+	char	*orig = "Hola";
+	char	*copy;
+
+	copy = ft_strdup(orig);
+
+	printf("Original: %s\n", orig);
+	printf("Duplicado: %s\n", copy);
+
+	free(copy);
+	return(0);
+}
