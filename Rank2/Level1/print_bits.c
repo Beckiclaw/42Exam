@@ -25,6 +25,6 @@ int	main(void)
  * Mientras i decrece de 7 a 0:
  * 	- Desplazamos el número i veces a la derecha (octet >> i)
  * 	- hacemos un AND con 1 (& 1) para obtener solo el último bit (0 o 1)
- * 	- Le sumamos '0' para convertirlo en carácter ('0' o '1')
+ * 	- Le sumamos '0'/48 para convertirlo en carácter ('0' o '1')
  * 	- Lo imprimimos con write.
  * No añadimos salto de línea porque el enunciado lo prohíbe. ¡Pero lo podemos poner en el main!*/
