@@ -58,5 +58,4 @@ int	main(int ac, char **av)
  * 2. Probamos a dividirlo entre 2.
  * 3. Si se puede, lo dividimos e imprimimos el factor.
  * 4. Si no se puede, subimos al siguiente número y repetimos!
- * 5. Cuando ya no se pueda dividir más, po yaasta.
- *
+ * 5. Cuando ya no se pueda dividir más, po yaast*/
