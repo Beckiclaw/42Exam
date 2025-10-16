@@ -7,22 +7,23 @@ typedef struct s_point
 	int y;
 }	t_point;
 
+void	fill(char **tab, t_point size, char target, int y, int x);
 void	flood_fill(char **tab, t_point size, t_point begin);
 
 #endif
 
-void	fill(char **tab, t_point size, char target, int row, int col)
+void	fill(char **tab, t_point size, char target, int y, int x)
 {
-	if(row < 0 || col < 0 || row >= size.y || col >= size.x)
+	if(y < 0 || x < 0 || y >= size.y || x >= size.x)
 		return;
-	if(tab[row][col] != target || tab[row][col] == 'F')
+	if(tab[y][x] != target || tab[y][x] == 'F')
 		return;
-	tab[row][col] = 'F';
+	tab[y][x] = 'F';
 
-	fill(tab, size, target, row -1, col);
-	fill(tab, size, target, row + 1, col);
-	fill(tab, size, target, row, col - 1);
-	fill(tab, size, target, row, col + 1);
+	fill(tab, size, target, y - 1, x);
+	fill(tab, size, target, y + 1, x);
+	fill(tab, size, target, y, x - 1);
+	fill(tab, size, target, y, x + 1);
 }
 
 void	flood_fill(char **tab, t_point size, t_point begin)
