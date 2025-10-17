@@ -5,13 +5,13 @@ void	rostring(char *str)
 	int	i = 0;
 	int	start;
 	int	end;
-	int	space;
-	int	word;
+	int	space = 0;
+	int	word = 0;
 
 	while(str[i] == ' ' || str[i] == '\t')
 		i++;
 	start = i;
-	while(str[i] > 32)
+	while(str[i] && str[i] > 32)
 		i++;
 	end = i - 1;
 	while(str[i] == ' ' || str[i] == '\t')
@@ -22,22 +22,23 @@ void	rostring(char *str)
 			space = 1;
 		else
 		{
-			if(space == 1)
-			{
+			if(space == 1 && word == 1)
 				write(1, " ", 1);
-				space = 0;
-			}
-			word = 1;
 			write(1, &str[i], 1);
+			space = 0;
+			word = 1;
 		}
 		i++;
 	}
-	if(str[i] == '\0' && word == 1)
-		write(1, " ", 1);
-	while(start <= end)
+	if(start <= end)
 	{
-		write(1, &str[start], 1);
-		start++;
+		if(word == 1)
+			write(1, " ", 1);
+		while(start <= end)
+		{
+			write(1, &str[start], 1);
+			start++;
+		}
 	}
 }
 
