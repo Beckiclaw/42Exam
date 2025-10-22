@@ -14,8 +14,11 @@ unsigned int	gcd(unsigned int a, unsigned int b)
 
 int	main(int ac, char **av)
 {
+	int	a = atoi(av[1]);
+	int	b = atoi(av[2]);
+
 	if(ac == 3)
-		printf("%u\n", gcd(atoi(av[1], atoi(av[2]))));
+		printf("%u\n", gcd(a, b));
 	else
 		printf("\n");
 	return(0);
