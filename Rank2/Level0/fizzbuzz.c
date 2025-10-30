@@ -37,3 +37,29 @@ int	main(void)
 	}
 	return (0);
 }
+
+/*
+Hacemos un putnbr. Que recibe un int n. 
+Declaramos dos variables, una variable long nb y otra tipo character c. 
+- nb es igual a n.
+Si nb es menor que 0, significa que es negativo.
+	- Escribimos un "-".
+	- nb es -nb
+Si nb es mayor o igual que 10.
+	- Llamamos a la propia ft_putnbr y dividimos nb entre 10.
+El characer c es igual a nb % 10 + '0'
+Escribe la posición del cáracter c. 
+
+Nuestro programa fizzbuzz.
+Declaramos una variable de tipo integrer i que es igual a 1, porque el programa va del 1 al 100. 
+Mientras que i sea menor o igual a 100.
+	- Si i porcentaje de 15 igual igual a 0.
+		- Escribimos fizzbuzz.
+	- Si i porcentaje de 3 es igual igual a 0.
+		- Escribimos fizz.
+	- Si i porcentaje de 5 es igual igual a 0.
+		- Escribimos buzz.
+	- Sino, llamamos a ft_putnbr(i)
+	- Escribimos un salto de línea.
+	- Iteramos to tieso para escribir cada número.
+Return(0) para finiquitar.*/ 
