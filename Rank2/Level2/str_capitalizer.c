@@ -22,7 +22,7 @@ static void	str_capitalizer(char *str)
 	}
 }
 
-/*
+
 void	str_capitalizer(char *str)
 {
 	int i = 0;

@@ -1,34 +1,39 @@
 #include <stdlib.h>
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int nbr)
 {
-	long	nb = n;
-	long	tmp;
-	int	len = (nb <= 0);
-	char	*str;
+	long long n = nbr;
+	int	len = 0;
+	char	*res;
 
-	if (nb < 0)
-		nb = -nb;             // valor absoluto en long
-	tmp = nb;
-	while (tmp > 0)          // contar dígitos
+	if(nbr <= 0)
+		len++;
+	while(n)
 	{
-		tmp /= 10;
+		n = n / 10;
 		len++;
 	}
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	str[len] = '\0';
-	if (n < 0)
-		str[0] = '-';
-	if (nb == 0)
-		str[0] = '0';
-	while (nb > 0)            // rellenar de atrás hacia delante
+	res = malloc(sizeof(char) * (len + 1));
+	if(!res)
+		return(NULL);
+	res[len] = '\0';
+	if(nbr == 0)
 	{
-		str[--len] = (nb % 10) + '0';
-		nb /= 10;
+		res[0] = '0';
+		return(res);
 	}
-	return (str);
+	n = nbr;
+	if(n < 0)
+	{
+		res[0] = '-';
+		n = -n;
+	}
+	while(n)
+	{
+		res[--len] = (n % 10) + '0';
+		n = n / 10;
+	}
+	return(res);
 }
 
 /*
