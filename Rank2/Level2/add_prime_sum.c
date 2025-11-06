@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void	putnbr(int n)
+void	ft_putnbr(int n)
 {
 	long	nb;
 	char	c;
@@ -14,7 +14,7 @@ void	putnbr(int n)
 		nb = -nb;
 	}
 	if (nb >= 10)
-		putnbr(nb / 10);
+		ft_putnbr(nb / 10);
 	c = (nb % 10) + '0';
 	write(1, &c, 1);
 }
@@ -51,7 +51,7 @@ static int	is_prime(int n)
 	if (n < 2)
 		return (0);
 	i = 2;
-	while (i <= n / i)
+	while (i < n)
 	{
 		if (n % i == 0)
 			return (0);
@@ -62,25 +62,23 @@ static int	is_prime(int n)
 
 int	main(int ac, char **av)
 {
-	int	n;
-	int	sum;
-	int	p;
+	if(ac == 2)
+	{
+		int	n = ft_atoi(av[1]);
+		int	sum = 0;
+		int	i = 2;
 
-	if (ac != 2 || (n = ft_atoi(av[1])) <= 0)
-	{
+		while (i <= n)
+		{
+			if (is_prime(i))
+				sum += i;
+			i++;
+		}
+		ft_putnbr(sum);
+		write(1, "\n", 1);
+	}
+	else
 		write(1, "0\n", 2);
-		return (0);
-	}
-	sum = 0;
-	p = 2;
-	while (p <= n)
-	{
-		if (is_prime(p))
-			sum += p;
-		p++;
-	}
-	putnbr(sum);
-	write(1, "\n", 1);
 	return (0);
 }
 
