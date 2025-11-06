@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 char	*ft_itoa(int nbr)
 {
@@ -34,6 +35,15 @@ char	*ft_itoa(int nbr)
 		n = n / 10;
 	}
 	return(res);
+}
+
+int	main(void)
+{
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(42));
+	printf("%s\n", ft_itoa(-42));
+	printf("%s\n", ft_itoa(-2147483648));
+	return (0);
 }
 
 /*
